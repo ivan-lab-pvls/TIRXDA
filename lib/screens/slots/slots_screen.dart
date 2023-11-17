@@ -83,7 +83,7 @@ class _SlotsScreenState extends State<SlotsScreen> {
     final dateTime = DateTime.tryParse(cachedTime) ?? DateTime(2000);
 
     if (DateTime.now().difference(dateTime).inSeconds < 60 * 60 * 24) {
-      final nextGift = dateTime.add(Duration(days: 1));
+      final nextGift = dateTime.add(const Duration(days: 1));
 
       setState(() {
         timeLeft = nextGift.difference(DateTime.now());
@@ -147,7 +147,7 @@ class _SlotsScreenState extends State<SlotsScreen> {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(0, 0.05),
+                            alignment: const Alignment(0, 0.05),
                             child: SizedBox(
                               height: MediaQuery.of(context).size.height * .1,
                               child: Padding(
@@ -250,13 +250,13 @@ class _SlotsScreenState extends State<SlotsScreen> {
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
-                              color: Color(0xFFffba36),
+                              color: const Color(0xFFffba36),
                             ),
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 8),
                             child: Text(
                               _gems.toString(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.w800,
                                 color: Colors.white,
                                 fontSize: 16,

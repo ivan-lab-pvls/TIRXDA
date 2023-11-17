@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:math' as _math;
+import 'dart:math' as math;
 
 const bet = 30;
 
@@ -41,7 +41,7 @@ class _WheelScreenState extends State<WheelScreen> {
     final dateTime = DateTime.tryParse(cachedTime) ?? DateTime(2000);
 
     if (DateTime.now().difference(dateTime).inSeconds < 60 * 60 * 24) {
-      final nextGift = dateTime.add(Duration(days: 1));
+      final nextGift = dateTime.add(const Duration(days: 1));
 
       setState(() {
         timeLeft = nextGift.difference(DateTime.now());
@@ -166,13 +166,13 @@ class _WheelScreenState extends State<WheelScreen> {
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
-                              color: Color(0xFFffba36),
+                              color: const Color(0xFFffba36),
                             ),
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 8),
                             child: Text(
                               _gems.toString(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.w800,
                                 color: Colors.white,
                                 fontSize: 16,
@@ -255,9 +255,9 @@ class Tria extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
-      offset: Offset(0, -10),
+      offset: const Offset(0, -10),
       child: Transform.rotate(
-        angle: _math.pi,
+        angle: math.pi,
         child: SizedBox(
             width: 36,
             height: 36,

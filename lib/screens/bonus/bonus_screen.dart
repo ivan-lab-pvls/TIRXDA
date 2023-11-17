@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -26,7 +28,7 @@ class _BonusScreenState extends State<BonusScreen> {
     final dateTime = DateTime.tryParse(cachedTime) ?? DateTime(2000);
 
     if (DateTime.now().difference(dateTime).inSeconds < 60 * 60 * 24) {
-      final nextGift = dateTime.add(Duration(days: 1));
+      final nextGift = dateTime.add(const Duration(days: 1));
 
       setState(() {
         timeLeft = nextGift.difference(DateTime.now());
@@ -92,12 +94,12 @@ class _BonusScreenState extends State<BonusScreen> {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(0, 0.28),
+                            alignment: const Alignment(0, 0.28),
                             child: Text(
                               timeLeft == null
                                   ? 'Your bonus is 100 gems'
                                   : '${timeLeft!.inHours} hours left for the next gift',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w800,
                                 fontSize: 18,

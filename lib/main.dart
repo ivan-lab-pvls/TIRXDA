@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -7,7 +9,7 @@ import 'package:tiger/screens/wheel/wheel_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -30,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFF620000),
       ),
-      home: OnBoardingScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
@@ -138,7 +140,7 @@ class _MainScreenState extends State<MainScreen> {
               'assets/main_top_image.png',
               fit: BoxFit.fitWidth,
             ),
-            Spacer(),
+            const Spacer(),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.4,
               child: PageView(
@@ -146,14 +148,14 @@ class _MainScreenState extends State<MainScreen> {
                   GestureDetector(
                       onTap: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => WheelScreen(),
+                              builder: (context) => const WheelScreen(),
                             ),
                           ),
                       child: Image.asset('assets/main_wheel.png')),
                   GestureDetector(
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => SlotsScreen(),
+                        builder: (context) => const SlotsScreen(),
                       ),
                     ),
                     child: Image.asset('assets/main_slots.png'),
@@ -161,7 +163,7 @@ class _MainScreenState extends State<MainScreen> {
                   GestureDetector(
                       onTap: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => BonusScreen(),
+                              builder: (context) => const BonusScreen(),
                             ),
                           ),
                       child: Image.asset('assets/main_gifts.png')),
@@ -173,7 +175,7 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
@@ -191,7 +193,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             InkWell(
               onTap: _onTap,
               child: Image.asset(
@@ -199,7 +201,7 @@ class _MainScreenState extends State<MainScreen> {
                 width: MediaQuery.of(context).size.width * 0.5,
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
@@ -211,21 +213,21 @@ class _MainScreenState extends State<MainScreen> {
       case 0:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => WheelScreen(),
+            builder: (context) => const WheelScreen(),
           ),
         );
         return;
       case 1:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SlotsScreen(),
+            builder: (context) => const SlotsScreen(),
           ),
         );
         return;
       case 2:
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => BonusScreen(),
+            builder: (context) => const BonusScreen(),
           ),
         );
         return;
